@@ -85,5 +85,290 @@
                 <p class="mt-2 text-gray-600 reveal">See how long you've been gamble-free and how much you've saved!</p>
                 <form id="progress-form" class="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center reveal" aria-label="Progress tracker form">
                     <input type="date" id="last-bet-date" class="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Last bet date" required>
-                    <input type="number" id*
-
+                    <input type="number" id="daily-amount" placeholder="Average daily spend ($)" class="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Average daily spend" required>
+                    <button type="submit" class="btn-primary focus-outline">Calculate</button>
+                </form>
+                <div id="progress-result" class="mt-6 text-lg font-semibold text-primary"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 section-bg">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal">Tools For Your <span class="text-primary">Recovery</span></h2>
+                <p class="mt-4 text-center max-w-2xl mx-auto text-gray-600 reveal">This isn't just an app. It's a lifeline. A supportive community and a set of tools designed to help you regain control.</p>
+                <div class="my-16 reveal">
+                    <img src="https://scontent.fkul8-5.fna.fbcdn.net/v/t39.30808-6/476336971_1020561720096732_4501117234649530689_n.jpg?auto=format&fit=crop&w=1200&q=80" alt="Support group for gambling recovery" class="rounded-xl mx-auto shadow-lg" loading="lazy">
+                </div>
+                <h3 class="font-lexend text-3xl md:text-4xl text-center font-bold tracking-tight reveal">Your Recovery Toolkit Includes:</h3>
+                <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card reveal" tabindex="0">
+                        <div class="text-primary mb-4"><svg class="w-12 h-12" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2z"/></svg></div>
+                        <h3 class="font-bold text-xl text-gray-800">Track Your Savings</h3>
+                        <p class="mt-2 text-gray-600">See your progress in real-time. Track the money you've saved since your last bet and watch your financial health improve day by day.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 200ms;" tabindex="0">
+                        <div class="text-primary mb-4"><svg class="w-12 h-12" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg></div>
+                        <h3 class="font-bold text-xl text-gray-800">A Supportive Community</h3>
+                        <p class="mt-2 text-gray-600">You're not alone. Connect with a private, anonymous community of people on the same journey. Share experiences, offer support, and celebrate milestones.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 400ms;" tabindex="0">
+                        <div class="text-primary mb-4"><svg class="w-12 h-12" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg></div>
+                        <h3 class="font-bold text-xl text-gray-800">Daily Encouragement</h3>
+                        <p class="mt-2 text-gray-600">Receive daily motivational messages, practical tips, and success stories to keep you focused and inspired on your path to a gamble-free life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal">Frequently Asked Questions</h2>
+                <div class="mt-10 max-w-3xl mx-auto space-y-6 text-left">
+                    <details class="bg-white rounded-lg p-4 shadow reveal" open>
+                        <summary class="font-semibold cursor-pointer select-none">Is my information confidential?</summary>
+                        <p class="mt-2 text-gray-600">Absolutely. We never share your details with anyone and your consultation is 100% private.</p>
+                    </details>
+                    <details class="bg-white rounded-lg p-4 shadow reveal">
+                        <summary class="font-semibold cursor-pointer select-none">How much does it cost?</summary>
+                        <p class="mt-2 text-gray-600">The first consultation is free. Ongoing tools and resources are mostly free or affordable.</p>
+                    </details>
+                    <details class="bg-white rounded-lg p-4 shadow reveal">
+                        <summary class="font-semibold cursor-pointer select-none">Can I join the community anonymously?</summary>
+                        <p class="mt-2 text-gray-600">Yes. You can use a nickname and never have to reveal your real identity to other members.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel Placeholder -->
+        <section id="testimonials" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal">Success Stories from Our <span class="text-primary">Community</span></h2>
+                <div class="mt-16 grid lg:grid-cols-3 gap-8" aria-label="Testimonials carousel">
+                    <!-- Add a carousel/slider for better engagement in future -->
+                    <div class="feature-card reveal" tabindex="0">
+                        <p class="text-gray-600">"I was deep in debt and felt hopeless. LifeBet gave me the tools to stop, and seeing my savings grow every day was the motivation I needed. I've paid off my debts and feel free again!"</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1921&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="James P." loading="lazy">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">James P.</p>
+                                <p class="text-sm text-gray-500">121 Days Gamble-Free</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 200ms;" tabindex="0">
+                        <p class="text-gray-600">"I was hiding my gambling from my family. The community here made me realize I wasn't a bad person, just someone who needed support and understanding."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="Michael B." loading="lazy">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">Michael B.</p>
+                                <p class="text-sm text-gray-500">245 Days Gamble-Free</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 400ms;" tabindex="0">
+                        <p class="text-gray-600">"The urge blocker is a lifesaver. Now, the urges are rare. I have my time and my mind back."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=1780&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="Sarah K." loading="lazy">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">Sarah K.</p>
+                                <p class="text-sm text-gray-500">188 Days Gamble-Free</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join" class="py-20 section-bg">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title reveal">Ready to Take Back Control?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 reveal">Your journey to a healthier, wealthier life can start today. Talk to one of our specialists for a free, confidential consultation.</p>
+                <div class="mt-8 reveal">
+                    <a href="#" id="final-booking-btn" class="btn-primary focus-outline">Book Your Free Consultation Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-8" role="contentinfo">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center items-center space-x-2 mb-4">
+                <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.563C9.252 15 9 14.748 9 14.437V9.563z" />
+                </svg>
+                <span class="font-lexend text-xl text-white font-bold">LifeBet</span>
+            </div>
+            <div class="space-x-6 mb-4">
+                <a href="#" class="text-sm hover:text-white focus:outline-none">Contact Support</a>
+                <a href="#" class="text-sm hover:text-white focus:outline-none">Privacy Policy</a>
+                <a href="#" class="text-sm hover:text-white focus:outline-none">Terms of Service</a>
+            </div>
+            <p class="text-sm">&copy; 2025 LifeBet. All Rights Reserved. Your Partner in Recovery.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (ARIA, keyboard accessible) -->
+    <div id="booking-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="booking-title" tabindex="-1">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full relative transform transition-all duration-300 scale-95" id="modal-content">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl focus-outline" aria-label="Close Booking Form">&times;</button>
+            <h3 class="font-lexend text-2xl font-bold text-gray-800 mb-2" id="booking-title">Book a Free, Confidential Consultation</h3>
+            <p class="text-gray-600 mb-6">Take the bravest step. Fill out the form below, and one of our specialists will reach out to schedule your session.</p>
+            <form id="booking-form" aria-label="Booking form">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required autocomplete="name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required autocomplete="email">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Tell us a bit about your situation (optional)</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                </div>
+                <button type="submit" class="w-full btn-primary focus-outline">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal (ARIA, keyboard accessible) -->
+    <div id="success-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="success-title" tabindex="-1">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center transform transition-all duration-300 scale-95" id="success-modal-content">
+            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4" aria-hidden="true">
+                <svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="font-lexend text-2xl font-bold text-gray-800 mb-2" id="success-title">Request Received!</h3>
+            <p class="text-gray-600 mb-6">Thank you. We've received your request and will be in touch within 24 hours to schedule your consultation. You've taken an important step.</p>
+            <button id="close-success-modal-btn" class="btn-primary focus-outline">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? "false" : "true");
+            });
+
+            // Scroll reveal animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - 100) {
+                        el.classList.add('visible');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+
+            // Modal Logic (ARIA, focus trap)
+            const bookingModal = document.getElementById('booking-modal');
+            const successModal = document.getElementById('success-modal');
+            const bookingForm = document.getElementById('booking-form');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
+            const openModalBtns = [
+                document.getElementById('nav-booking-btn'),
+                document.getElementById('mobile-booking-btn'),
+                document.getElementById('hero-booking-btn'),
+                document.getElementById('final-booking-btn')
+            ];
+
+            function trapFocus(modal) {
+                const focusable = modal.querySelectorAll('button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])');
+                let first = focusable[0], last = focusable[focusable.length - 1];
+                modal.addEventListener('keydown', e => {
+                    if (e.key === 'Tab') {
+                        if (e.shiftKey) {
+                            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+                        } else {
+                            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+                        }
+                    }
+                    if (e.key === 'Escape') modal.classList.add('hidden');
+                });
+            }
+
+            const openModal = () => {
+                bookingModal.classList.remove('hidden');
+                setTimeout(() => { document.getElementById('modal-content').classList.remove('scale-95'); }, 10);
+                bookingModal.focus();
+                trapFocus(bookingModal);
+            };
+            const closeModal = () => {
+                document.getElementById('modal-content').classList.add('scale-95');
+                setTimeout(() => { bookingModal.classList.add('hidden'); }, 300);
+            };
+            const openSuccessModal = () => {
+                successModal.classList.remove('hidden');
+                setTimeout(() => { document.getElementById('success-modal-content').classList.remove('scale-95'); }, 10);
+                successModal.focus();
+                trapFocus(successModal);
+            };
+            const closeSuccessModal = () => {
+                document.getElementById('success-modal-content').classList.add('scale-95');
+                setTimeout(() => { successModal.classList.add('hidden'); }, 300);
+            };
+
+            openModalBtns.forEach(btn => {
+                if (btn) btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+            });
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (bookingModal) bookingModal.addEventListener('click', (e) => { if (e.target === bookingModal) closeModal(); });
+            if (bookingForm) bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                closeModal();
+                setTimeout(() => { openSuccessModal(); }, 350);
+            });
+            if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
+            if (successModal) successModal.addEventListener('click', (e) => { if (e.target === successModal) closeSuccessModal(); });
+
+            // Close mobile menu when a link is clicked
+            const allNavLinks = document.querySelectorAll('#mobile-menu a, header nav a');
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+                        if(mobileMenu) mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', "false");
+                    }
+                });
+            });
+
+            // Progress tracker logic
+            const progressForm = document.getElementById('progress-form');
+            const progressResult = document.getElementById('progress-result');
+            if(progressForm) {
+                progressForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const lastBetDate = document.getElementById('last-bet-date').value;
+                    const dailyAmount = parseFloat(document.getElementById('daily-amount').value);
+                    if (!lastBetDate || isNaN(dailyAmount)) {
+                        progressResult.textContent = "Please enter valid data.";
+                        return;
+                    }
+                    const now = new Date();
+                    const start = new Date(lastBetDate);
+                    const days = Math.floor((now - start)/(1000*60*60*24));
+                    const saved = days > 0 ? (days * dailyAmount) : 0;
+                    progressResult.textContent = days > 0
+                        ? `🎉 You've been gamble-free for ${days} day(s) and saved $${saved.toLocaleString()}!`
+                        : "Enter a valid past date!";
+                });
+            }
+        });
+    </script>
+</body>
+</html>

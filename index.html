@@ -54,9 +54,13 @@
         }
         /* Scroll reveal animation */
         .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.animate-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .reveal.visible {
             opacity: 1;
@@ -376,35 +380,48 @@
     </div>
 
 
+    <!-- Enhanced Form Handler -->
+    <script src="public/js/form-handler.js"></script>
+    
     <script>
-        // FIX: Wrap all script logic in a DOMContentLoaded event listener.
-        // This ensures that the HTML is fully loaded before the script tries to find elements or attach event listeners.
+        // Core UI functionality (keeping separate from form handling)
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-            // Scroll reveal animation
+            // Scroll reveal animation (optional enhancement)
             const revealElements = document.querySelectorAll('.reveal');
+            
+            // Initially hide elements for animation
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top > window.innerHeight - 100) {
+                    el.classList.add('animate-in');
+                }
+            });
+            
             const revealOnScroll = () => {
                 const windowHeight = window.innerHeight;
                 revealElements.forEach(el => {
                     const elementTop = el.getBoundingClientRect().top;
                     if (elementTop < windowHeight - 100) {
+                        el.classList.remove('animate-in');
                         el.classList.add('visible');
                     }
                 });
             };
+            
             window.addEventListener('scroll', revealOnScroll);
             revealOnScroll(); // Trigger on load
 
-            // Modal Logic
+            // Modal Logic (form submission handled by form-handler.js)
             const bookingModal = document.getElementById('booking-modal');
             const successModal = document.getElementById('success-modal');
-            const bookingForm = document.getElementById('booking-form');
             const closeModalBtn = document.getElementById('close-modal-btn');
             const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
             
@@ -433,14 +450,6 @@
                 }, 300);
             };
             
-            const openSuccessModal = () => {
-                if (!successModal) return;
-                successModal.classList.remove('hidden');
-                setTimeout(() => {
-                    document.getElementById('success-modal-content').classList.remove('scale-95');
-                }, 10);
-            };
-
             const closeSuccessModal = () => {
                 if (!successModal) return;
                 document.getElementById('success-modal-content').classList.add('scale-95');
@@ -449,6 +458,7 @@
                 }, 300);
             };
 
+            // Set up modal open buttons
             openModalBtns.forEach(btn => {
                 if (btn) btn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -456,20 +466,12 @@
                 });
             });
 
+            // Set up modal close buttons
             if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
             if(bookingModal) bookingModal.addEventListener('click', (e) => {
                 if (e.target === bookingModal) {
                     closeModal();
                 }
-            });
-
-            if(bookingForm) bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                closeModal();
-                // Delay opening success modal for a smoother transition
-                setTimeout(() => {
-                    openSuccessModal();
-                }, 350);
             });
             
             if(closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
@@ -489,6 +491,13 @@
                     }
                 });
             });
+
+            // Make modal functions globally available for form handler
+            window.LifeBetModals = {
+                openModal,
+                closeModal,
+                closeSuccessModal
+            };
         });
     </script>
 </body>

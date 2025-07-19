@@ -1,495 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quit Gambling - Reclaim Your Future</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lexend:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom Styles */
-        body {
-            background-color: #F0F4F8; /* Light, calming blue-gray */
-            color: #1F2937; /* Dark Slate Gray for text */
-            font-family: 'Inter', sans-serif;
-        }
-        .font-lexend {
-            font-family: 'Lexend', sans-serif;
-        }
-        .bg-primary {
-            background-color: #3B82F6; /* A hopeful, strong blue */
-        }
-        .text-primary {
-            color: #3B82F6;
-        }
-        .border-primary {
-            border-color: #3B82F6;
-        }
-        .btn-primary {
-            @apply bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300;
-        }
-        .btn-secondary {
-            @apply bg-transparent border-2 border-primary text-primary font-bold py-3 px-8 rounded-lg shadow-sm hover:shadow-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300;
-        }
-        .section-title {
-            @apply font-lexend text-4xl md:text-5xl text-center font-bold tracking-tight;
-        }
-        .feature-card {
-            @apply bg-white p-6 rounded-xl border border-gray-200 shadow-md;
-        }
-        .section-bg {
-            @apply bg-white;
-        }
-        .nav-link {
-            @apply text-gray-600 hover:text-primary transition-colors duration-300 font-semibold;
-        }
-        .quote-card {
-            @apply bg-white/50 p-6 rounded-lg border border-gray-200/50 shadow-sm mt-4;
-        }
-        /* Modal styles */
-        .modal-overlay {
-            @apply fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50;
-        }
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body class="antialiased">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join our hands-on AI Vibe Coding workshop. Learn to build and launch 4-5 production-ready web and mobile apps. Master UI/UX, backends, payment gateways, and more.">
+  <meta name="keywords" content="AI Vibe Coding, learn to code, web development workshop, mobile app development, full-stack bootcamp, React, Git, product management for developers">
+  <meta name="author" content="theLead.io">
+  <title>AI Vibe Coding Workshop | Build & Launch Real-World Apps</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" href="https://thelead.io/wp-content/uploads/2020/04/cropped-lead-favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="https://thelead.io/wp-content/uploads/2020/04/cropped-lead-favicon-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="https://thelead.io/wp-content/uploads/2020/04/cropped-lead-favicon-192x192.png" />
 
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
-                <!-- SVG Logo -->
-                <svg class="w-10 h-10 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.563C9.252 15 9 14.748 9 14.437V9.563z" />
-                </svg>
-                <span class="font-lexend text-2xl text-gray-800 font-bold">LifeBet</span>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom styles to apply the Inter font and other enhancements */
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #f9fafb; /* bg-gray-50 */
+    }
+    .card-hover {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    /* Style for the sticky nav to avoid content jump */
+    .sticky-nav-padding {
+        padding-top: 72px; /* Adjust this based on nav height */
+    }
+    /* Custom gradient for yellow accent */
+    .bg-gradient-yellow {
+        background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        --tw-gradient-from: #f59e0b; /* amber-500 */
+        --tw-gradient-to: #facc15;   /* yellow-400 */
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+    /* Header background with a yellow overlay */
+    .header-bg {
+        /* Using a yellow gradient overlay. RGB for yellow-400 (250, 204, 21) and amber-500 (245, 158, 11) */
+        background-image: linear-gradient(to right, rgba(250, 204, 21, 0.9), rgba(245, 158, 11, 0.9)), url('https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+    /* Accordion styles */
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation Bar -->
+  <nav id="navbar" class="bg-gray-900/80 backdrop-blur-md text-white fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <div class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+            <a href="https://www.thelead.io" target="_blank" rel="noopener noreferrer">
+              <img src="https://thelead.io/wp-content/uploads/2019/11/lead-white-logo.png" alt="theLead.io Logo" class="h-8 w-auto">
             </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#features" class="nav-link">Recovery Tools</a>
-                <a href="#stats" class="nav-link">The Reality</a>
-                <a href="#guidance" class="nav-link">Spiritual Guidance</a>
-                <a href="#testimonials" class="nav-link">Success Stories</a>
-                <a href="#" id="nav-booking-btn" class="btn-primary text-sm">Get Help Now</a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#dates" class="hover:text-amber-300 transition-colors">Dates</a>
+                <a href="#syllabus" class="hover:text-amber-300 transition-colors">Syllabus</a>
+                <a href="#outcomes" class="hover:text-amber-300 transition-colors">Outcomes</a>
+                <a href="#trainers" class="hover:text-amber-300 transition-colors">Trainers</a>
+                <a href="#faq" class="hover:text-amber-300 transition-colors">FAQ</a>
+                <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="bg-amber-500 hover:bg-amber-600 text-gray-900 px-4 py-2 rounded-md font-semibold transition-all">Register Now</a>
             </div>
+
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#features" class="block py-2 text-center nav-link">Recovery Tools</a>
-            <a href="#stats" class="block py-2 text-center nav-link">The Reality</a>
-            <a href="#guidance" class="block py-2 text-center nav-link">Spiritual Guidance</a>
-            <a href="#testimonials" class="block py-2 text-center nav-link">Success Stories</a>
-            <a href="#" id="mobile-booking-btn" class="block mt-4 text-center btn-primary w-full">Get Help Now</a>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="relative py-20 md:py-32 text-center text-white overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=2070&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="relative container mx-auto px-6">
-                <h1 class="font-lexend text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
-                    Reclaim Your Future. <br class="hidden md:block"/> <span class="text-primary">Break Free From Gambling.</span>
-                </h1>
-                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">
-                    The odds are always against you. It's time to stop chasing losses and start investing in yourself. Take the first step towards financial freedom and a life free from the stress of gambling.
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#" id="hero-booking-btn" class="btn-primary w-full sm:w-auto">Book a Free Consultation</a>
-                    <a href="#features" class="btn-secondary w-full sm:w-auto">See The Tools</a>
-                </div>
-                <p class="mt-6 text-sm text-gray-300">Your path to recovery starts here.</p>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="py-20 section-bg">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title reveal">Tools For Your <span class="text-primary">Recovery</span></h2>
-                <p class="mt-4 text-center max-w-2xl mx-auto text-gray-600 reveal">This isn't just an app. It's a lifeline. A supportive community and a set of tools designed to help you regain control and build a better, wealthier future.</p>
-                
-                <div class="my-16 reveal">
-                    <img src="https://scontent.fkul8-5.fna.fbcdn.net/v/t39.30808-6/476336971_1020561720096732_4501117234649530689_n.jpg?stp=dst-jpg_s2048x2048_tt6&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=mvpp-y1qMOkQ7kNvwFip6hN&_nc_oc=AdmLLzWcJVCE1vTVk4lPSFQDi_8C92gz_Owj5il1kV2FPzGZHcM6KpDdVXH5SzJU068&_nc_zt=23&_nc_ht=scontent.fkul8-5.fna&_nc_gid=FUKjnstKMI6_bj-AaT_DYg&oh=00_AfSVz4XcdkaPAucggihn3_ia1aVAcXbLUMH4l0LFPqUyIA&oe=6880D41D" alt="LifeBet App Features Showcase" class="rounded-xl shadow-2xl w-full max-w-5xl mx-auto" >
-                </div>
-
-                <h3 class="font-lexend text-3xl md:text-4xl text-center font-bold tracking-tight reveal">Your Recovery Toolkit Includes:</h3>
-                <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="feature-card reveal">
-                        <div class="text-primary mb-4"><svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
-                        <h3 class="font-bold text-xl text-gray-800">Track Your Savings</h3>
-                        <p class="mt-2 text-gray-600">See your progress in real-time. Track the money you've saved since your last bet and watch your financial health improve day by day.</p>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 200ms;"><div class="text-primary mb-4"><svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962c.513-.183 1.074-.328 1.67-.427a9.095 9.095 0 014.256 0btn-secondary 1.67.099 2.218.244 2.73.427m-5.404 2.962a9.094 9.094 0 01-3.742-.479 3 3 0 014.682-2.72m-7.5-2.962c-.513-.183-1.074-.328-1.67-.427a9.095 9.095 0 00-4.256 0c-.596.099-1.157.244-1.67.427m5.404 2.962a9.094 9.094 0 003.742.479 3 3 0 00-4.682 2.72m-11.25-6.188c.513.183 1.074.328 1.67.427a9.095 9.095 0 014.256 0c.596-.099 1.157-.244 1.67-.427m-5.404-2.962a9.094 9.094 0 01-3.742.479 3 3 0 014.682 2.72" /></svg></div>
-                        <h3 class="font-bold text-xl text-gray-800">A Supportive Community</h3>
-                        <p class="mt-2 text-gray-600">You're not alone. Connect with a private, anonymous community of people on the same journey. Share experiences, offer support, and celebrate milestones together.</p>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 400ms;"><div class="text-primary mb-4"><svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
-                        <h3 class="font-bold text-xl text-gray-800">Daily Encouragement</h3>
-                        <p class="mt-2 text-gray-600">Receive daily motivational messages, practical tips, and success stories to keep you focused and inspired on your path to a gamble-free life.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Gambling Statistics Section -->
-        <section id="stats" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title reveal">The Reality By The Numbers</h2>
-                <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600 reveal">Gambling addiction is a widespread issue with devastating consequences. Understanding the scope of the problem is a key step in recognizing its seriousness.</p>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="feature-card reveal">
-                        <p class="font-lexend text-5xl font-bold text-primary">2 Million</p>
-                        <p class="mt-2 text-lg font-semibold text-gray-800">U.S. Adults</p>
-                        <p class="mt-1 text-gray-600">meet the criteria for severe problem gambling in any given year.</p>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 200ms;">
-                        <p class="font-lexend text-5xl font-bold text-primary">20%</p>
-                        <p class="mt-2 text-lg font-semibold text-gray-800">Higher Suicide Rate</p>
-                        <p class="mt-1 text-gray-600">Individuals with a gambling disorder have a significantly higher rate of suicide attempts compared to the general population.</p>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 400ms;">
-                        <p class="font-lexend text-5xl font-bold text-primary">$6 Billion</p>
-                        <p class="mt-2 text-lg font-semibold text-gray-800">Annual Social Cost</p>
-                        <p class="mt-1 text-gray-600">The estimated cost of problem gambling in the U.S., including crime, bankruptcy, and healthcare.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Irresponsible Gambling Section -->
-        <section class="py-20 section-bg">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
-                    <div class="md:w-1/2 reveal">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxTSQrqMtr3TebB2LMOtJQNqiorMvdq7ryAw&s" alt="A person gambling irresponsibly, looking stressed" class="rounded-xl shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/800x600/FFFFFF/1F2937?text=The+Stress+of+Gambling';">
-                    </div>
-                    <div class="md:w-1/2 text-center md:text-left reveal" style="transition-delay: 200ms;">
-                        <h2 class="font-lexend text-4xl md:text-5xl font-bold tracking-tight text-gray-800">The High Cost of the "Thrill"</h2>
-                        <p class="mt-4 text-lg text-gray-600">
-                            Chasing losses, betting more than you can afford, the constant stress—this is the reality of problem gambling. It's a cycle of anxiety and desperation disguised as a game. The "next big win" is a dangerous illusion that costs more than just money. It costs you your peace of mind.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact on Families Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <div class="md:w-1/2 reveal">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvPC4YqHK1vY76tEqxUZTn2h_NpAC7mQPe7S6KJCp9vSL5WwaNity2oegOmpqXgPI2h4U&usqp=CAU" alt="A family looking sad and disconnected due to gambling" class="rounded-xl shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/800x600/F0F4F8/1F2937?text=Impact+on+Families';">
-                    </div>
-                    <div class="md:w-1/2 text-center md:text-left reveal" style="transition-delay: 200ms;">
-                        <h2 class="font-lexend text-4xl md:text-5xl font-bold tracking-tight text-gray-800">The Ripple Effect on Loved Ones</h2>
-                        <p class="mt-4 text-lg text-gray-600">
-                           Gambling addiction doesn't just harm the individual. It strains relationships, breaks trust, and creates a constant state of worry for family and friends. The arguments over money, the broken promises, and the emotional distance can destroy the most important connections in your life.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Foreclosure Section -->
-        <section class="py-20 section-bg">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
-                    <div class="md:w-1/2 reveal">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtXcaxpAOIdcnxTZP4sqrZalpfcCBCenxrA&s" alt="A foreclosed home, representing the financial ruin from gambling" class="rounded-xl shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/800x600/FFFFFF/1F2937?text=Financial+Ruin';">
-                    </div>
-                    <div class="md:w-1/2 text-center md:text-left reveal" style="transition-delay: 200ms;">
-                        <h2 class="font-lexend text-4xl md:text-5xl font-bold tracking-tight text-gray-800">From a Full House to an Empty Home</h2>
-                        <p class="mt-4 text-lg text-gray-600">
-                            The ultimate price of gambling can be the roof over your head. What starts as a "harmless" bet can spiral into overwhelming debt, leading to foreclosure and financial ruin. Don't bet your home, your security, and your future on a game you can't win.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Spiritual Guidance Section -->
-        <section id="guidance" class="py-20 bg-gray-200">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title reveal">Spiritual Guidance on Your Path</h2>
-                <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600 reveal">For many, faith provides a foundation for recovery. Major world religions have long cautioned against the perils of gambling, viewing it as a path to ruin, greed, and neglect of one's duties. Below are some perspectives.</p>
-                
-                <div class="mt-12 grid md:grid-cols-2 gap-8">
-                    <!-- Christianity -->
-                    <div class="reveal">
-                        <h3 class="font-lexend text-2xl font-bold text-gray-800">Christianity</h3>
-                        <p class="mt-2 text-gray-700">While the Bible does not explicitly use the word "gambling," it warns against the principles behind it, such as the love of money, greed, and seeking quick, easy wealth.</p>
-                        <div class="quote-card">
-                            <blockquote class="text-gray-600 italic">"For the love of money is a root of all kinds of evil. Some people, eager for money, have wandered from the faith and pierced themselves with many griefs."</blockquote>
-                            <cite class="block text-right mt-2 not-italic font-semibold text-gray-700">~ 1 Timothy 6:10</cite>
-                        </div>
-                    </div>
-
-                    <!-- Islam -->
-                    <div class="reveal" style="transition-delay: 200ms;">
-                        <h3 class="font-lexend text-2xl font-bold text-gray-800">Islam</h3>
-                        <p class="mt-2 text-gray-700">The Quran explicitly forbids gambling (known as "Maisir"), identifying it as a grave sin and an act of Satan that creates enmity and diverts people from remembering God.</p>
-                        <div class="quote-card">
-                            <blockquote class="text-gray-600 italic">"Satan's plan is to excite enmity and hatred between you, with intoxicants and gambling, and hinder you from the remembrance of Allah, and from prayer. Will you not then abstain?"</blockquote>
-                            <cite class="block text-right mt-2 not-italic font-semibold text-gray-700">~ Quran 5:91</cite>
-                        </div>
-                    </div>
-
-                    <!-- Hinduism -->
-                    <div class="reveal">
-                        <h3 class="font-lexend text-2xl font-bold text-gray-800">Hinduism</h3>
-                        <p class="mt-2 text-gray-700">Hindu scriptures often portray gambling as a destructive vice. The epic Mahabharata contains a famous story where a king loses his kingdom, his brothers, and his wife in a game of dice, serving as a powerful cautionary tale.</p>
-                    </div>
-
-                    <!-- Buddhism -->
-                    <div class="reveal" style="transition-delay: 200ms;">
-                        <h3 class="font-lexend text-2xl font-bold text-gray-800">Buddhism</h3>
-                        <p class="mt-2 text-gray-700">Buddhism teaches the principle of 'Right Livelihood,' which discourages professions or activities that harm oneself or others. Gambling is seen as a cause of suffering and a distraction from the path to enlightenment.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title reveal">Success Stories from Our <span class="text-primary">Community</span></h2>
-                <div class="mt-16 grid lg:grid-cols-3 gap-8">
-                    <div class="feature-card reveal">
-                        <p class="text-gray-600">"I was deep in debt and felt hopeless. LifeBet gave me the tools to stop, and seeing my savings grow every day was the motivation I needed. I've paid off two credit cards and I'm finally sleeping at night."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1921&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="User avatar" onerror="this.onerror=null;this.src='https://placehold.co/40x40/3B82F6/FFFFFF?text=J';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-800">James P.</p>
-                                <p class="text-sm text-gray-500">121 Days Gamble-Free</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 200ms;">
-                        <p class="text-gray-600">"I was hiding my gambling from my family and the stress was eating me alive. The community here made me realize I wasn't a bad person, just someone who needed help. My relationship with my wife has never been better."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="User avatar" onerror="this.onerror=null;this.src='https://placehold.co/40x40/3B82F6/FFFFFF?text=M';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-800">Michael B.</p>
-                                <p class="text-sm text-gray-500">245 Days Gamble-Free</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-card reveal" style="transition-delay: 400ms;">
-                        <p class="text-gray-600">"The urge blocker is a lifesaver. In moments of weakness, it was the barrier I needed. Now, the urges are rare. I have my time and my mind back. I've even started a new hobby with the money I've saved."</p>
-                        <div class="mt-4 flex items-center">
-                             <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=1780&auto=format&fit=crop" class="rounded-full w-12 h-12 object-cover" alt="User avatar" onerror="this.onerror=null;this.src='https://placehold.co/40x40/3B82F6/FFFFFF?text=S';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-800">Sarah K.</p>
-                                <p class="text-sm text-gray-500">188 Days Gamble-Free</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section id="join" class="py-20 section-bg">
-             <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title reveal">Ready to Take Back Control?</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 reveal">Your journey to a healthier, wealthier life can start today. Talk to one of our specialists for a free, confidential consultation.</p>
-                <div class="mt-8 reveal">
-                    <a href="#" id="final-booking-btn" class="btn-primary">Book Your Free Consultation Now</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <div class="flex justify-center items-center space-x-2 mb-4">
-                 <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.563C9.252 15 9 14.748 9 14.437V9.563z" />
-                </svg>
-                <span class="font-lexend text-xl text-white font-bold">LifeBet</span>
-            </div>
-            <div class="space-x-6 mb-4">
-                <a href="#" class="text-sm hover:text-white">Contact Support</a>
-                <a href="#" class="text-sm hover:text-white">Privacy Policy</a>
-                <a href="#" class="text-sm hover:text-white">Terms of Service</a>
-            </div>
-            <p class="text-sm">&copy; 2025 LifeBet. All Rights Reserved. Your Partner in Recovery.</p>
-        </div>
-    </footer>
-
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="modal-overlay hidden">
-        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full relative transform transition-all duration-300 scale-95" id="modal-content">
-            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
-            <h3 class="font-lexend text-2xl font-bold text-gray-800 mb-2">Book a Free, Confidential Consultation</h3>
-            <p class="text-gray-600 mb-6">Take the bravest step. Fill out the form below, and one of our specialists will reach out to schedule your session.</p>
-            <form id="booking-form">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
-                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
-                </div>
-                <div class="mb-6">
-                    <label for="message" class="block text-gray-700 font-semibold mb-2">Tell us a bit about your situation (optional)</label>
-                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                </div>
-                <button type="submit" class="w-full btn-primary">Submit Request</button>
-            </form>
         </div>
     </div>
-
-    <!-- Success Modal -->
-    <div id="success-modal" class="modal-overlay hidden">
-        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center transform transition-all duration-300 scale-95" id="success-modal-content">
-            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
-                <svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-            </div>
-            <h3 class="font-lexend text-2xl font-bold text-gray-800 mb-2">Request Received!</h3>
-            <p class="text-gray-600 mb-6">Thank you. We've received your request and will be in touch within 24 hours to schedule your consultation. You've taken an important step.</p>
-            <button id="close-success-modal-btn" class="btn-primary">Close</button>
-        </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+        <a href="#dates" class="block hover:text-amber-300 transition-colors py-2">Dates</a>
+        <a href="#syllabus" class="block hover:text-amber-300 transition-colors py-2">Syllabus</a>
+        <a href="#outcomes" class="block hover:text-amber-300 transition-colors py-2">Outcomes</a>
+        <a href="#trainers" class="block hover:text-amber-300 transition-colors py-2">Trainers</a>
+        <a href="#faq" class="block hover:text-amber-300 transition-colors py-2">FAQ</a>
+        <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="block bg-amber-500 hover:bg-amber-600 text-gray-900 px-4 py-2 rounded-md font-semibold transition-all text-center mt-2">Register Now</a>
     </div>
+  </nav>
 
+  <!-- Header Section -->
+  <header class="header-bg text-gray-900 pt-32 pb-20 md:pt-40 md:pb-28 border-b-8 border-amber-600">
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
+        AI Vibe Coding Workshop
+      </h1>
+      <p class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto mb-8">
+        Go from idea to live application. Build 4-5 web and mobile apps with best practices in UI/UX, backends, and payment gateways. We cover security, debugging, and version control to make your projects production-ready.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-gray-900 text-white font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:bg-gray-800 transition-all transform hover:scale-105">
+          Book Your Seat Now
+        </a>
+        <a href="https://drive.google.com/file/d/1xQZhIFpf4SJxRF02jeM_D4u-lGGpTbsx/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-transparent border-2 border-gray-900 text-gray-900 font-bold text-lg px-10 py-3 rounded-lg shadow-lg hover:bg-gray-900 hover:text-white transition-all transform hover:scale-105">
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Trusted By Section -->
+  <section id="trusted-by" class="bg-gray-100 py-12">
+      <div class="container mx-auto px-6">
+          <h3 class="text-center text-gray-600 text-sm font-bold uppercase tracking-wider mb-8">Trusted by industry leaders</h3>
+          <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:gap-x-12">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQku905qBjCQ5SDj3lZve75sRjQcKTmpersqg&s" alt="Johor Corp Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://cdn.brandfetch.io/idYJaweP2l/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1746558728078" alt="Ecoworld Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://cdn.brandfetch.io/idBvD8kBit/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667603006186" alt="Shell Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/MDEC_logo.png" alt="MDEC Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://cdn.brandfetch.io/idseuM-L0r/w/1000/h/1000/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745066255275" alt="Tune Talk Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://learn.taxpod.my/images/favicon/favicon60c22d97859be.png" alt="YYC Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Sunway_logo.png" alt="Sunway Logo" class="h-8 md:h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" onerror="this.style.display='none'">
+          </div>
+      </div>
+    </section>
 
-    <script>
-        // FIX: Wrap all script logic in a DOMContentLoaded event listener.
-        // This ensures that the HTML is fully loaded before the script tries to find elements or attach event listeners.
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+  <!-- Main Content -->
+  <main class="bg-gray-50">
+    <div class="container mx-auto px-6 py-12 md:py-20">
 
-            // Scroll reveal animation
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                revealElements.forEach(el => {
-                    const elementTop = el.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - 100) {
-                        el.classList.add('visible');
-                    }
-                });
-            };
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Trigger on load
+      <!-- Dates Section -->
+      <section id="dates" class="mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Choose Your Workshop Date</h2>
+            <p class="text-gray-600 mt-2">Seats are filling up fast! Book now to secure your spot.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Date Card 1: July -->
+            <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-amber-400 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-500">July 19-20, 2025</p>
+                    <p class="font-bold text-2xl text-gray-800 mb-4">Saturday & Sunday</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-red-500 h-4 rounded-full" style="width: 95%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm mb-4">
+                        <p class="font-bold text-red-600 flex items-center"><i data-lucide="flame" class="w-4 h-4 mr-1"></i>95% Sold Out!</p>
+                        <p class="text-gray-500">Only a few slots left!</p>
+                    </div>
 
-            // Modal Logic
-            const bookingModal = document.getElementById('booking-modal');
-            const successModal = document.getElementById('success-modal');
-            const bookingForm = document.getElementById('booking-form');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
-            
-            // Buttons that can open the booking modal
-            const openModalBtns = [
-                document.getElementById('nav-booking-btn'),
-                document.getElementById('mobile-booking-btn'),
-                document.getElementById('hero-booking-btn'),
-                document.getElementById('final-booking-btn')
-            ];
+                    <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md transition-all">
+                        Book Now
+                    </a>
+                </div>
+            </div>
 
-            const openModal = () => {
-                if (!bookingModal) return;
-                bookingModal.classList.remove('hidden');
-                // Animate content entrance
-                setTimeout(() => {
-                    document.getElementById('modal-content').classList.remove('scale-95');
-                }, 10);
-            };
+            <!-- Date Card 2: September -->
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-500">September 20-21, 2025</p>
+                    <p class="font-bold text-2xl text-gray-800 mb-4">Saturday & Sunday</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-green-500 h-4 rounded-full" style="width: 15%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm mb-4">
+                        <p class="font-bold text-green-600">15% Sold Out</p>
+                        <p class="text-gray-500">Slots available</p>
+                    </div>
 
-            const closeModal = () => {
-                if (!bookingModal) return;
-                document.getElementById('modal-content').classList.add('scale-95');
-                setTimeout(() => {
-                    bookingModal.classList.add('hidden');
-                }, 300);
-            };
-            
-            const openSuccessModal = () => {
-                if (!successModal) return;
-                successModal.classList.remove('hidden');
-                setTimeout(() => {
-                    document.getElementById('success-modal-content').classList.remove('scale-95');
-                }, 10);
-            };
+                    <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md transition-all">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+      </section>
+    
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-12">
 
-            const closeSuccessModal = () => {
-                if (!successModal) return;
-                document.getElementById('success-modal-content').classList.add('scale-95');
-                setTimeout(() => {
-                    successModal.classList.add('hidden');
-                }, 300);
-            };
+          <!-- Who Should Attend Section -->
+          <section id="who-should-attend" class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 card-hover">
+             <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 flex items-center"><i data-lucide="users" class="w-7 h-7 mr-3 text-amber-500"></i>Who Should Attend</h2>
+                    <p class="mb-4 text-gray-600">This course is perfect for ambitious builders and innovators:</p>
+                    <ul class="space-y-3">
+                      <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0"></i><span><strong>Aspiring Developers</strong> wanting to build a production-ready portfolio.</span></li>
+                      <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0"></i><span><strong>Entrepreneurs & Founders</strong> who want to build their own MVP.</span></li>
+                      <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0"></i><span><strong>Product Managers & Designers</strong> looking to understand the tech side.</span></li>
+                      <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0"></i><span><strong>Career Changers</strong> ready to dive into the world of tech and development.</span></li>
+                    </ul>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://thelead.io/wp-content/uploads/2020/07/Web-development-illustration-1march-july-06.png" alt="Web Development Illustration" class="rounded-lg object-cover h-full w-full">
+                </div>
+             </div>
+          </section>
 
-            openModalBtns.forEach(btn => {
-                if (btn) btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal();
-                });
-            });
+          <!-- Syllabus Section -->
+          <section id="syllabus" class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 card-hover">
+              <h2 class="text-2xl font-bold mb-6 flex items-center"><i data-lucide="book-open-check" class="w-7 h-7 mr-3 text-amber-500"></i>Syllabus Overview</h2>
+              <div class="space-y-6">
+                  <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+                      <h3 class="font-bold text-lg text-amber-800 mb-2">Day 1: Foundations & Frontend Magic</h3>
+                      <ul class="list-disc list-inside text-gray-700 space-y-2">
+                          <li><strong>Product Management Essentials:</strong> From idea to PRD (Product Requirements Document).</li>
+                          <li><strong>UI/UX Best Practices:</strong> Designing user-centric interfaces with Figma.</li>
+                          <li><strong>Version Control with Git:</strong> Mastering branching, commits, and pushing to GitHub.</li>
+                          <li><strong>Vibe Coding Example #1:</strong> Build a landing page with checkout & an integrated AI chatbot.</li>
+                          <li><strong>Vibe Coding Example #2:</strong> Develop a functional Google Chrome plugin from scratch.</li>
+                      </ul>
+                  </div>
+                  <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                      <h3 class="font-bold text-lg text-green-800 mb-2">Day 2: Backend, Deployment & Going Live</h3>
+                      <ul class="list-disc list-inside text-gray-700 space-y-2">
+                          <li><strong>Backend & Database Integration:</strong> Connecting your app to serverless functions and databases.</li>
+                          <li><strong>Live Deployment:</strong> Pushing your projects live with proper hosting on Vercel/Netlify.</li>
+                           <li><strong>Vibe Coding Example #3:</strong> Create a cross-platform mobile app for iOS and Android.</li>
+                          <li><strong>Vibe Coding Example #4:</strong> Build a thematic project with real-world application (e.g., e-commerce, social media clone).</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+          
+          <!-- Trainers Section -->
+          <section id="trainers" class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 card-hover">
+              <h2 class="text-2xl font-bold mb-6 flex items-center"><i data-lucide="graduation-cap" class="w-7 h-7 mr-3 text-amber-500"></i>Your Expert Trainers</h2>
+              <div class="space-y-8">
+                  <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                      <img src="https://pbs.twimg.com/profile_images/738570826291646464/EEH1StZS_400x400.jpg" alt="Dr. Lau Cher Han" class="rounded-full w-24 h-24 border-4 border-gray-200 object-cover flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/64748b?text=Trainer';">
+                      <div>
+                          <h3 class="font-semibold text-xl text-center sm:text-left text-gray-800">Dr. Lau Cher Han</h3>
+                          <p class="text-gray-600 text-center sm:text-left">Chief Data Scientist, national AI advisor, and expert trainer in data science and application development.</p>
+                      </div>
+                  </div>
+                  <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                      <img src="https://www.kosmo.com.my/wp-content/uploads/2025/03/Warren_Leow.jpg123-1024x768.jpg" alt="Warren Leow" class="rounded-full w-24 h-24 border-4 border-gray-200 object-cover flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/64748b?text=Trainer';">
+                      <div>
+                          <h3 class="font-semibold text-xl text-center sm:text-left text-gray-800">Warren Leow</h3>
+                          <p class="text-gray-600 text-center sm:text-left">Founder of Supern8n and an expert in scaling tech products from zero to one across multiple industries.</p>
+                      </div>
+                  </div>
+                  <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                      <img src="https://scontent.fkul10-1.fna.fbcdn.net/v/t39.30808-6/357769661_10160785443249901_4445119936146916340_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=IKxJ572dpDcQ7kNvwFZa7-H&_nc_oc=Adnqt9yXZ-XCFGi7Y2dMAAhTAvlpx2vZcZZiJ0S8d7LhUcDmbf-El7yFsBsG3CpWjkleLaeKuZrYEvl_sXCoUI4z&_nc_zt=23&_nc_ht=scontent.fkul10-1.fna&_nc_gid=yNYQ-MRmKQsKHyTLbCeUTA&oh=00_AfRiNK9HlxXUxuIZ22i4R_x-jnxcd9mQCxj0tWkhEofguA&oe=687D066E" alt="Marcus Chia" class="rounded-full w-24 h-24 border-4 border-gray-200 object-cover flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/64748b?text=Trainer';">
+                      <div>
+                          <h3 class="font-semibold text-xl text-center sm:text-left text-gray-800">Marcus Chia</h3>
+                          <p class="text-gray-600 text-center sm:text-left">AI UI/UX designer and expert in helping organizations adopt AI for operational efficiency. Specialist in no-code/low-code AI solutions and practical applications for business processes.</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
 
-            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-            if(bookingModal) bookingModal.addEventListener('click', (e) => {
-                if (e.target === bookingModal) {
-                    closeModal();
-                }
-            });
+          <!-- Testimonials Section -->
+          <section id="testimonials" class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 card-hover relative">
+            <i data-lucide="quote" class="absolute top-4 right-4 w-16 h-16 text-gray-100"></i>
+            <h2 class="text-2xl font-bold mb-6 flex items-center">What Our Alumni Are Saying</h2>
+            <div class="space-y-6">
+              <blockquote class="bg-gray-100 p-6 rounded-lg border-l-4 border-gray-300">
+                <p class="text-gray-600 italic mb-3">"I went from zero coding knowledge to launching my own web app in just a few days. The hands-on approach is incredible!"</p>
+                <cite class="font-semibold text-gray-700 not-italic">– Alex T., Founder</cite>
+              </blockquote>
+              <blockquote class="bg-gray-100 p-6 rounded-lg border-l-4 border-gray-300">
+                <p class="text-gray-600 italic mb-3">"The focus on product management and real-world best practices was a game-changer. This is more than just a coding course."</p>
+                <cite class="font-semibold text-gray-700 not-italic">– Sarah K., Product Manager</cite>
+              </blockquote>
+            </div>
+          </section>
 
-            if(bookingForm) bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                closeModal();
-                // Delay opening success modal for a smoother transition
-                setTimeout(() => {
-                    openSuccessModal();
-                }, 350);
-            });
-            
-            if(closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
-            if(successModal) successModal.addEventListener('click', (e) => {
-                 if (e.target === successModal) {
-                    closeSuccessModal();
-                }
-            });
+        </div>
 
-            // Close mobile menu when a link is clicked
-            const allNavLinks = document.querySelectorAll('#mobile-menu a, header nav a');
-            allNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Only close menu if it's a section link, not the booking button
-                    if(link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
-                        if(mobileMenu) mobileMenu.classList.add('hidden');
-                    }
-                });
+        <!-- Sticky Sidebar -->
+        <aside class="lg:col-span-1 space-y-8 lg:sticky lg:top-24 self-start">
+          <div id="outcomes" class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 card-hover">
+              <h3 class="text-xl font-bold mb-4 flex items-center"><i data-lucide="rocket" class="w-6 h-6 mr-3 text-amber-500"></i>Learning Outcomes</h3>
+              <ul class="space-y-3 text-gray-600">
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Build and launch 4-5 complete web & mobile applications.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Master UI/UX, PRDs, and product management best practices.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Integrate backends, databases, and payment gateways.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Use Git and GitHub for professional version control.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Deploy production-level projects with proper hosting.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Implement security fundamentals and debugging techniques.</span></li>
+              </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 card-hover">
+              <h3 class="text-xl font-bold mb-4 flex items-center"><i data-lucide="building-2" class="w-6 h-6 mr-3 text-amber-500"></i>Benefits to Your Organization</h3>
+              <ul class="space-y-3 text-gray-600">
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Accelerate product development and prototyping.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Build in-house MVPs without high agency costs.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Improve collaboration between technical and non-technical teams.</span></li>
+                  <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-2 text-amber-500 mt-1 flex-shrink-0"></i><span>Upskill your workforce with production-ready coding skills.</span></li>
+              </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="mt-20">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Glimpses from Our Workshops</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="overflow-hidden rounded-xl shadow-lg card-hover">
+                <img src="https://github.com/drhanlau/n8n-course/blob/main/501008480_1271616571636352_1045940269974980193_n.jpg?raw=true" alt="Past workshop photo 1" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl shadow-lg card-hover">
+                <img src="https://github.com/drhanlau/n8n-course/blob/main/516791714_1309874321143910_2384036856029643188_n.jpg?raw=true" alt="Past workshop photo 2" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl shadow-lg card-hover">
+                <img src="https://raw.githubusercontent.com/drhanlau/n8n-course/refs/heads/main/photo-1552664730-d307ca884978.avif" alt="Past workshop photo 3" class="w-full h-full object-cover">
+            </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="mt-20">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 card-hover">
+          <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Frequently Asked Questions</h2>
+          <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
+
+            <!-- FAQ Item -->
+            <div class="border-b border-gray-200 py-4">
+              <button class="accordion-header w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 hover:text-amber-600 focus:outline-none">
+                <span>Do I need any coding experience?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform transform"></i>
+              </button>
+              <div class="accordion-content mt-2 text-gray-600">
+                <p>Absolutely not! This workshop is designed for beginners. We'll guide you step-by-step from the very basics to launching a full application. All you need is a passion for building and a willingness to learn.</p>
+              </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border-b border-gray-200 py-4">
+              <button class="accordion-header w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 hover:text-amber-600 focus:outline-none">
+                <span>What technologies will we learn?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform transform"></i>
+              </button>
+              <div class="accordion-content mt-2 text-gray-600">
+                <p class="mb-2">We focus on a modern, in-demand tech stack and toolset:</p>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>Languages & Frameworks:</strong> React.js, HTML5, Tailwind CSS</li>
+                    <li><strong>Backend:</strong> Serverless Functions (e.g., Vercel, Firebase)</li>
+                    <li><strong>Version Control:</strong> Git & GitHub</li>
+                    <li><strong>IDEs & Tools:</strong> Cursor, Visual Studio Code, Lovable, Bolt</li>
+                    <li><strong>Design & Payments:</strong> Figma, Stripe API</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border-b border-gray-200 py-4">
+              <button class="accordion-header w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 hover:text-amber-600 focus:outline-none">
+                <span>Will I have a portfolio after this course?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform transform"></i>
+              </button>
+              <div class="accordion-content mt-2 text-gray-600">
+                <p>Yes! You will leave with 4-5 fully functional, live projects hosted on the web. These projects will form the foundation of your professional portfolio, all tracked and managed on your own GitHub profile.</p>
+              </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border-b border-gray-200 py-4">
+              <button class="accordion-header w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 hover:text-amber-600 focus:outline-none">
+                <span>Is this course HRDF claimable?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform transform"></i>
+              </button>
+              <div class="accordion-content mt-2 text-gray-600">
+                <p>Yes, this course is 100% HRDF claimable under the SBL-KHAS scheme. We will provide all necessary documentation upon registration to assist with your claim.</p>
+              </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="py-4">
+              <button class="accordion-header w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 hover:text-amber-600 focus:outline-none">
+                <span>What do I need to bring?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform transform"></i>
+              </button>
+              <div class="accordion-content mt-2 text-gray-600">
+                <p class="mb-2">Just bring your laptop, a charger, and your enthusiasm! All software and tools we use are cloud-based, so no prior installation is needed.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA / Register Section -->
+      <section id="register" class="mt-20 text-center bg-gray-800 text-white rounded-xl p-10 md:p-16 shadow-2xl bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        <div class="relative z-10">
+          <h2 class="text-4xl font-extrabold mb-4">Ready to Build Your Big Idea?</h2>
+          <p class="text-lg text-gray-300 mb-2">RM3,500 HRDF / RM2,900 non-HRDF (+ SST)</p>
+          <p class="text-gray-400 mb-8">Includes training, certification, and 3 months of post-workshop support.</p>
+          <a href="https://forms.gle/PN7R1p8C5YD6sWABA" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-yellow text-gray-900 font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            Book Your Seat Now
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400">
+    <div class="container mx-auto px-6 py-8 text-center">
+      <p class="mb-4">Organized by <strong>theLead.io</strong></p>
+      <p>For inquiries: <a href="mailto:chelsea@thelead.io" class="text-amber-400 hover:text-amber-300">chelsea@thelead.io</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/15557074708" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+        <path d="M16.604 13.444c-.27-.135-.636-.316-1.002-.497-.366-.181-.606-.271-.787-.271-.181 0-.362.09-.543.271l-.452.543c-.271.362-.543.632-.724.813-.181.181-.362.271-.632.271-.271 0-.543-.09-.724-.271-.181-.181-.9-1.084-2.168-2.348-1.267-1.267-2.167-2.078-2.348-2.168-.181-.181-.271-.452-.271-.724 0-.271.09-.543.271-.632.181-.181.452-.362.813-.724l.543-.452c.181-.181.271-.362.271-.543s-.09-.362-.271-.787c-.181-.366-.316-.732-.497-1.002-.181-.271-.362-.452-.632-.452h-.813c-.362 0-.724.181-1.002.543-.271.362-.452.724-.452 1.002 0 .362.181.724.452 1.18l.271.452c.813 1.446 2.078 2.979 3.794 4.512 1.715 1.533 3.069 2.709 4.512 3.794l.452.271c.452.271.813.452 1.18.452.271 0 .632-.181 1.002-.452.362-.271.543-.632.543-1.002v-.813c0-.271-.181-.452-.452-.632Z M12 2.04c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10Z"/>
+      </svg>
+  </a>
+
+  <script>
+    // Wait for the DOM to be fully loaded before running scripts
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Lucide icons first
+      lucide.createIcons();
+
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        const navLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
-    </script>
+      }
+
+      // Accordion functionality
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      accordionHeaders.forEach(header => {
+          header.addEventListener('click', () => {
+              const content = header.nextElementSibling;
+              // Lucide replaces the <i> tag with an <svg> tag, so we select the svg.
+              const icon = header.querySelector('svg');
+
+              // Safety check in case elements are not found
+              if (!content || !icon) return;
+
+              const isOpening = !content.style.maxHeight;
+
+              // Optional: Close all other open accordions before opening the new one
+              document.querySelectorAll('.accordion-content').forEach(item => {
+                  if (item !== content) {
+                      item.style.maxHeight = null;
+                      const otherIcon = item.previousElementSibling.querySelector('svg');
+                      if (otherIcon) {
+                          otherIcon.classList.remove('rotate-180');
+                      }
+                  }
+              });
+
+              // Toggle the clicked accordion
+              if (isOpening) {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                  icon.classList.add('rotate-180');
+              } else {
+                  content.style.maxHeight = null;
+                  icon.classList.remove('rotate-180');
+              }
+          });
+      });
+    });
+  </script>
+
 </body>
 </html>
